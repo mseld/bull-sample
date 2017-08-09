@@ -1,0 +1,28 @@
+{
+    "redis": {
+        "host": "localhost",
+        "port": 6379,
+        "index": 5
+    },
+    "writer": {
+        "db_dlr_files": "./folders/cdrs/DLR_Files"
+    },
+    "log": {
+        "Level": "TRACE",
+        "appenders": [{
+                "type": "console"
+            },
+            {
+                "type": "dateFile",
+                "filename": "./folders/logs/cdr_file_writer/dlr.",
+                "pattern": "yyyyMMdd.log",
+                "category": "DLR",
+                "alwaysIncludePattern": true,
+                "layout": {
+                    "type": "pattern",
+                    "pattern": "[%d{ISO8601}] %z %p - %m"
+                }
+            }
+        ]
+    }
+}
